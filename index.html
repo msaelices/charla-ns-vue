@@ -1,0 +1,269 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>Apps nativas con <br/>NativeScript-Vue</h1>
+        </section>
+        <section>
+          <h2>Sobre mí</h2>
+          <p>Twitter: @linator</p>
+          <p>Github: @msaelices</p>
+          <p>Logo Commite y de Progress?</p>
+          <ul>
+            <li>Core developer de Nativescript-Vue</li>
+            <li>Contribuciones a NS: RadCalendar, RadListView, Twilio plugin, vue-cli-template, etc.</li>
+          </ul>
+          <aside class="notes">
+            Show NS UI demo.
+          </aside>
+        </section>
+        <section>
+          <h2>NativeScript</h2>
+          <blockquote>
+            Open source framework for building truly native mobile apps with Angular, Vue.js, TypeScript, or JavaScript
+          </blockquote>
+          <ul>
+            <li>Creado por Telerik en 2015</li>
+            <li>Adquirido por Progress</li>
+            <li>Runtime JS que dirige el UI</li>
+            <li>Acceso con JS a todas las APIs nativas en iOS y Android</li>
+          </ul>
+        </section>
+        <section>
+          <h2>NativeScript vs Ionic</h2>
+          <ul>
+            <li>No hay WebView</li>
+            <li>Mayor rendimiento</li>
+            <li>Menor tiempo de start-up</li>
+          </ul>
+        </section>
+        <section>
+          <h2>NativeScript vs React Native</h2>
+          <p>
+            Muy similar. Diferencias sutiles
+          </p>
+          <ul>
+            <li>No ligado a framework JS específico</li>
+            <li>Acceso total a librerías nativas</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Vue Js</h2>
+          <p>
+            Buscar charlas de Vue
+          </p>
+          <ul>
+            <li>Progresivo</li>
+            <li>Muy intuitivo</li>
+            <li>...</li>
+          </ul>
+        </section>
+        <section>
+          <h2>NativeScript-Vue</h2>
+          <ul>
+            <li>Creado en 2017, por Igor Randjelovic</li>
+            <li>1.0 y 2.0 en 2018</li>
+            <li>Adopción por Progress</li>
+            <li>Pocas apps conocidas</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Webapp con Vue</h2>
+          <pre>
+            <code class="html">
+&lt;html&gt;
+  &lt;body&gt;
+    &lt;div id="app"&gt;&lt;/div&gt;
+    &lt;script src="js/bundle.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+            </code>
+          </pre>
+          <pre>
+            <code class="javascript">
+import Vue from 'vue'
+import App from './App.vue'
+
+new Vue({
+  render: h => h(App),
+}).$mount('#app')
+            </code>
+          </pre>
+        </section>
+        <section>
+            <h2>Mobile App con NS-Vue</h2>
+            <pre>
+              <code class="javascript">
+import Vue from 'nativescript-vue';
+import App from './components/App.vue';
+
+new Vue({
+  render: h => h('frame', [h(App)])
+}).$start();
+              </code>
+            </pre>
+          </section>
+          <section>
+          <h2>Componente con Vue</h2>
+          <pre>
+            <code class="xml"><template>
+  <div>
+    <p>{{ message }}</p>
+    <button @click="reverseMessage">Reverse Message</button>
+  </div>
+</template>
+
+<script>
+export default {
+  data () {
+    return { message: 'Hello world' };
+  },
+  methods: {
+    reverseMessage () {
+      this.message = this.message.split('').reverse().join('');
+    }
+  }
+}
+</script>
+            </code>
+          </pre>
+        </section>
+        <section>
+            <h2>Componente con NS-Vue</h2>
+            <pre>
+              <code class="xml"><template>
+  <Page>
+    <ActionBar :title="message"></ActionBar>
+    <StackLayout>
+      <Button text="Reverse Message" @tap="reverseMessage"></Button>
+    </StackLayout>
+  </Page>
+</template>
+
+<script>
+export default {
+  data () {
+    return { message: 'Hello world' };
+  },
+  methods: {
+    reverseMessage () {
+      this.message = this.message.split('').reverse().join('');
+    }
+  }
+}
+</script>
+              </code>
+            </pre>
+        </section>
+        <section>
+          <h2>NativeScript - APIs nativas</h2>
+          <pre>
+            <code class="javascript">
+  // iOS
+  var alert = new UIAlertView();
+  alert.title = 'Hello NativeScript';
+  alert.addButtonWithTitle('OK');
+  alert.show();
+            </code>
+          </pre>
+          <pre>
+            <code class="javascript">
+  // Android
+  var time = new android.text.format.Time();
+  time.setToNow();
+  time.format('%d/%m/%y');
+  "31/01/2019"
+            </code>
+          </pre>
+        </section>
+        <section>
+          <h2>¿Y el código multiplataforma?</h2>
+          <ul style="width: 70%">
+            <li>Plantillas XML y estilos CSS</li>
+          </ul>
+          <pre>
+            <code class="xml"><Button class="btn" text="Hello world" @tap="onTap"></Button></code>
+          </pre>
+          <ul style="width: 70%">
+            <li><code>tns-core-modules</code></li>
+          </ul>
+          <pre>
+            <code class="javascript">import { alert } from 'tns-core-modules/ui/dialogs';
+alert('Hello NativeScript');
+
+// si necesitas diferenciar
+import { isAndroid } from 'tns-core-modules/platform';
+if (isAndroid) {...} else {...}</code>
+          </pre>
+          <ul style="width: 70%">
+            <li>Plugins <a href="http://market.nativescript.org">market.nativescript.org</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Creación de App</h2>
+          <ul>
+            <li>Seguir documentación en https://nativescript-vue.org/</li>
+            <li>Se presupone NativeScript ya instalado</li>
+          </ul>
+          <pre>
+            <code>
+npm install -g @vue/cli @vue/cli-init
+$ vue init nativescript-vue/vue-cli-template my-app
+$ cd my-app
+$ npm install
+$ tns run android --bundle
+$ # or
+$ tns run ios --bundle
+            </code>
+          </pre>
+        </section>
+        <section>
+          <h2>Autocompletado de APIs nativas</h2>
+          <ul>
+            <li><code>npm i tns-platform-declarations --save-dev</code></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
+</html>
