@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>reveal.js</title>
+    <title>Apps nativas con {N}-vue</title>
 
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/black.css">
@@ -43,13 +43,13 @@
         <section>
           <h2>NativeScript</h2>
           <blockquote>
-            Open source framework for building truly native mobile apps with Angular, Vue.js, TypeScript, or JavaScript
+            “Open source framework for building truly native mobile apps with Angular, Vue.js, TypeScript, or JavaScript”
           </blockquote>
           <ul>
             <li>Creado por Telerik en 2015</li>
             <li>Adquirido por Progress</li>
             <li>Runtime JS que dirige el UI</li>
-            <li>Acceso con JS a todas las APIs nativas en iOS y Android</li>
+            <li>Acceso con JS al 100% APIs nativas iOS y Android</li>
           </ul>
         </section>
         <section>
@@ -202,7 +202,7 @@ export default {
         <section>
           <h2>¿Y el código multiplataforma?</h2>
           <ul style="width: 70%">
-            <li>Plantillas XML y estilos CSS</li>
+            <li>Plantillas y estilos CSS</li>
           </ul>
           <pre>
             <code class="xml"><Button class="btn" text="Hello world" @tap="onTap"></Button></code>
@@ -225,12 +225,12 @@ if (isAndroid) {...} else {...}</code>
         <section>
           <h2>Creación de App</h2>
           <ul>
-            <li>Seguir documentación en https://nativescript-vue.org/</li>
+            <li>Seguir documentación en <a href="https://nativescript-vue.org/">nativescript-vue.org</a></li>
             <li>Se presupone NativeScript ya instalado</li>
           </ul>
           <pre>
-            <code>
-npm install -g @vue/cli @vue/cli-init
+            <code class="bash">
+$ npm install -g @vue/cli @vue/cli-init
 $ vue init nativescript-vue/vue-cli-template my-app
 $ cd my-app
 $ npm install
@@ -239,12 +239,6 @@ $ # or
 $ tns run ios --bundle
             </code>
           </pre>
-        </section>
-        <section>
-          <h2>Autocompletado de APIs nativas</h2>
-          <ul>
-            <li><code>npm i tns-platform-declarations --save-dev</code></li>
-          </ul>
         </section>
       </div>
     </div>
