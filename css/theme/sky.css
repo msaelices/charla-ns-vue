@@ -82,6 +82,19 @@ body {
 /*********************************************
  * OTHER
  *********************************************/
+.reveal .logo {
+  border: none;
+  margin: 1rem; }
+
+.reveal .company-brand {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; }
+
+.reveal .company-brand b {
+  font-size: 3.5rem; }
+
 .reveal p {
   margin: 20px 0;
   line-height: 1.3; }

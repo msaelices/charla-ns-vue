@@ -26,19 +26,26 @@
       <div class="slides">
         <section>
           <h1>Apps nativas con <br/>NativeScript-Vue</h1>
+          <img src="./img/ns-vue-logo.png" alt="NativeScript-Vue logo"
+               class="logo" style="margin-top: 80px; width: 200px;">
+          <aside class="notes">
+            Arrancar emuladores: iphone y genymotion.
+          </aside>
         </section>
         <section>
           <h2>Sobre mí</h2>
-          <p>Twitter: @linator</p>
-          <p>Github: @msaelices</p>
-          <p>Logo Commite y de Progress?</p>
+          <p>Twitter: <a target="_blank" href="http://twitter.com/linator">@linator</a><br>
+             Github: <a target="_blank" href="http://github.com/msaelices">@msaelices</a></p>
+          <div class="company-brand">
+            <img src="./img/commite-logo.png" width="100px" alt="Commite Logo" class="logo">
+            <b>Commite</b>
+          </div>
           <ul>
+            <li>20 años en tecnologías webs</li>
+            <li>2 años en Vue</li>
             <li>Core developer de Nativescript-Vue</li>
-            <li>Contribuciones a NS: RadCalendar, RadListView, Twilio plugin, vue-cli-template, etc.</li>
+            <li>NS-UI en Vue, Twilio, Plugin VSCode, etc.</li>
           </ul>
-          <aside class="notes">
-            Show NS UI demo.
-          </aside>
         </section>
         <section>
           <h2>NativeScript</h2>
@@ -51,6 +58,9 @@
             <li>Runtime JS que dirige el UI</li>
             <li>Acceso con JS al 100% APIs nativas iOS y Android</li>
           </ul>
+          <aside class="notes">
+            Mostrar demo de NativeScript Example.
+          </aside>
         </section>
         <section>
           <h2>NativeScript vs Ionic</h2>
@@ -77,8 +87,8 @@
           </p>
           <ul>
             <li>Progresivo</li>
+            <li>Gran rendimiento</li>
             <li>Muy intuitivo</li>
-            <li>...</li>
           </ul>
         </section>
         <section>
@@ -219,14 +229,27 @@ import { isAndroid } from 'tns-core-modules/platform';
 if (isAndroid) {...} else {...}</code>
           </pre>
           <ul style="width: 70%">
-            <li>Plugins <a href="http://market.nativescript.org">market.nativescript.org</a></li>
+            <li>Plugins <a target="_blank" href="http://market.nativescript.org">market.nativescript.org</a></li>
           </ul>
         </section>
         <section>
+            <h2>Recorrido a la Documentación</h2>
+            <p><a target="_blank" href="https://nativescript-vue.org/es/docs/introduction/">nativescript-vue.org/es/docs</a></p>
+            <ul>
+              <li>Getting Started</li>
+              <li>Routing</li>
+              <li>Layouts - <a target="_blank" href="https://www.nslayouts.com/">nslayouts.com</a></li>
+              <li>Action bars</li>
+              <li>Components</li>
+              <li>Dialogs</li>
+              <li>Styling - <a target="_blank" href="https://docs.nativescript.org/ui/styling">docs.nativescript.org/ui/styling</a></li>
+            </ul>
+          </section>
+        <section>
           <h2>Creación de App</h2>
           <ul>
-            <li>Seguir documentación en <a href="https://nativescript-vue.org/">nativescript-vue.org</a></li>
-            <li>Se presupone NativeScript ya instalado</li>
+            <li>Seguir documentación en <a target="_blank" href="https://nativescript-vue.org/">nativescript-vue.org</a></li>
+            <li>Presupone NativeScript ya instalado</li>
           </ul>
           <pre>
             <code class="bash">
@@ -239,6 +262,12 @@ $ # or
 $ tns run ios --bundle
             </code>
           </pre>
+          <aside class="notes">
+            <ul>
+              <li>Hacer demo</li>
+              <li>No olvidar el --bundle</li>
+            </ul>
+          </aside>
         </section>
       </div>
     </div>
