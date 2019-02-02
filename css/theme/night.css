@@ -75,7 +75,8 @@ body {
  *********************************************/
 .reveal .logo {
   border: none;
-  margin: 1rem; }
+  margin: 1rem;
+  background: transparent; }
 
 .reveal .company-brand {
   display: flex;
