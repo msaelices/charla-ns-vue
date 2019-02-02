@@ -121,19 +121,6 @@ new Vue({
           </pre>
         </section>
         <section>
-            <h2>Mobile App con NS-Vue</h2>
-            <pre>
-              <code class="javascript">
-import Vue from 'nativescript-vue';
-import App from './components/App.vue';
-
-new Vue({
-  render: h => h('frame', [h(App)])
-}).$start();
-              </code>
-            </pre>
-          </section>
-          <section>
           <h2>Componente con Vue</h2>
           <pre>
             <code class="xml"><template>
@@ -158,6 +145,19 @@ export default {
             </code>
           </pre>
         </section>
+        <section>
+            <h2>Mobile App con NS-Vue</h2>
+            <pre>
+              <code class="javascript">
+import Vue from 'nativescript-vue';
+import App from './components/App.vue';
+
+new Vue({
+  render: h => h('frame', [h(App)])
+}).$start();
+              </code>
+            </pre>
+          </section>
         <section>
             <h2>Componente con NS-Vue</h2>
             <pre>
@@ -265,6 +265,11 @@ $ tns run ios --bundle
               <li>No olvidar el --bundle</li>
             </ul>
           </aside>
+        </section>
+        <section>
+          <h2>Muchas gracias</h2>
+          <p>Código de ejemplo en:</p>
+          <p><a href="https://github.com/msaelices/ns-ui-vue-demo">github.com/msaelices/ns-ui-vue-demo</a></p>
         </section>
       </div>
     </div>
